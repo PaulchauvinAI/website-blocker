@@ -1,0 +1,120 @@
+/* Archivo Font */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Archivo', sans-serif;
+    margin: 0;
+    background-color: #F5F7FA;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+header {
+    background-color: #0077B6;
+    color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-weight: 700;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    flex: 1;
+    margin-right: 16px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input {
+    flex: 2;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.btn-primary {
+    flex: 2;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0077B6;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #005A8E;
+    transform: translateY(-2px);
+}
+
+#blockedSitesList ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#blockedSitesList li {
+    background-color: #fff;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #555;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#blockedSitesList li button {
+    background-color: #DC3545;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#blockedSitesList li button:hover {
+    background-color: #C82333;
+    transform: translateY(-2px);
+}
