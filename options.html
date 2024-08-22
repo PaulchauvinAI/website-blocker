@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Blocker Settings</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,56 +14,46 @@
         <header>
             <div class="header-content">
                 <h1>Website Blocker</h1>
-                <p>Take control of your digital distractions.</p>
-                <p>Set up your Website Blocker settings, including blocking times, redirect URLs, and blocked websites.</p>
+                <p class="subtitle">Take control of your digital distractions</p>
             </div>
         </header>
 
         <main>
-
-
-            <section>
-                <h2>Blocking time</h2>
+            <section class="card">
+                <h2>Blocking Time</h2>
                 <p>Set the time range during which you want to block distracting websites.</p>
                 <div class="form-group">
-                    <label for="start">Start Time (24-hour format):</label>
-                    <input type="number" id="start" min="0" max="23" placeholder="e.g., 9">
+                    <label for="start">Start Time:</label>
+                    <input type="time" id="start">
                 </div>
                 <div class="form-group">
-                    <label for="end">End Time (24-hour format):</label>
-                    <input type="number" id="end" min="0" max="23" placeholder="e.g., 17">
+                    <label for="end">End Time:</label>
+                    <input type="time" id="end">
                 </div>
             </section>
 
-            <section>
+            <section class="card">
                 <h2>Redirect URL</h2>
                 <div class="form-group">
-                    <input type="text" id="redirectUrl" placeholder="e.g., https://google.com">
-                    
+                    <input type="url" id="redirectUrl" placeholder="e.g., https://google.com">
                 </div>
-            </section>
-            <section>
-                <div class="form-group">
                 <button id="save_redirect" class="btn-primary">Save Settings</button>
-                </div>
             </section>
 
-            <section>
+            <section class="card">
                 <h2>Blocked Websites</h2>
                 <div class="form-group">
                     <input type="text" id="blockedSites" placeholder="e.g., example.com, test.com">
-                    <button id="add_website" class="btn-primary">Add</button>
+                    <button id="add_website" class="btn-secondary">Add</button>
                 </div>
             </section>
 
-            <section id="blockedSitesList">
+            <section id="blockedSitesList" class="card">
                 <h2>Currently Blocked Websites</h2>
                 <ul id="siteList">
                     <!-- The list of blocked sites with remove buttons will be rendered here by options.js -->
                 </ul>
             </section>
-
-
         </main>
     </div>
 

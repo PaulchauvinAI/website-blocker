@@ -14,6 +14,10 @@ chrome.action.onClicked.addListener((tab) => {
       let blockedSites = data.blockedSites || [];
       let redirectUrl = data.redirectUrl || "";
       let timeframes = data.timeframes || [];
+
+      if (redirectUrl !== "" && !redirectUrl.startsWith("https://")) {
+        redirectUrl = "https://" + redirectUrl;
+    }
   
       // Normalize the URL by removing the scheme
       let normalizedUrl = details.url.replace(/^https?:\/\//, '');
