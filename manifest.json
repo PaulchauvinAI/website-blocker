@@ -3,10 +3,15 @@
     "name": "Website Blocker",
     "version": "1.0",
     "description": "Block specific websites during certain timeframes and redirect to another URL.",
+    "icons": {
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      },
     "permissions": [
       "storage",
-      "webNavigation",
-      "tabs"
+      "webNavigation"
     ],
     "background": {
       "service_worker": "background.js"
