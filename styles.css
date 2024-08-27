@@ -112,12 +112,12 @@ h2 {
 }
 
 .btn-secondary {
-    color: var(--primary-color);
-    background-color: var(--input-background);
+    color: #e0e8f0;
+    background-color: #005A8E;
 }
 
 .btn-secondary:hover {
-    background-color: #e0e8f0;
+    background-color: #024165;
     transform: translateY(-2px);
 }
 
