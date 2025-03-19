@@ -7,54 +7,71 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
             <div class="header-content">
                 <h1>Website Blocker</h1>
-                <p class="subtitle">Take control of your digital distractions</p>
+                <p class="subtitle">Take control of your digital distractions and boost productivity</p>
             </div>
         </header>
 
         <main>
             <section class="card">
-                <h2>Blocking Time</h2>
-                <p>Set the time range during which you want to block distracting websites.</p>
+                <h2><i class="fas fa-clock"></i> Blocking Schedule</h2>
+                <p>Set the time range when distracting websites should be blocked.</p>
                 <div class="form-group">
                     <label for="start">Start Time:</label>
-                    <input type="time" id="start">
+                    <input type="time" id="start" required>
                 </div>
                 <div class="form-group">
                     <label for="end">End Time:</label>
-                    <input type="time" id="end">
+                    <input type="time" id="end" required>
                 </div>
+                <p class="helper-text"><i class="fas fa-info-circle"></i> Sites will be blocked between these hours on the current day.</p>
             </section>
 
             <section class="card">
-                <h2>Redirect URL</h2>
+                <h2><i class="fas fa-directions"></i> Redirect URL</h2>
+                <p>When a blocked site is accessed, you'll be redirected to this URL:</p>
                 <div class="form-group">
-                    <input type="url" id="redirectUrl" placeholder="e.g., https://google.com">
+                    <input type="url" id="redirectUrl" placeholder="e.g., https://google.com" required>
                 </div>
-                <button id="save_redirect" class="btn-primary">Save Settings</button>
+                <p class="helper-text"><i class="fas fa-info-circle"></i> Leave empty to use a blank page.</p>
+                <button id="save_redirect" class="btn-primary"><i class="fas fa-save"></i> Save Settings</button>
             </section>
 
             <section class="card">
-                <h2>Blocked Websites</h2>
+                <h2><i class="fas fa-ban"></i> Blocked Websites</h2>
+                <p>Enter domain names to block (e.g., facebook.com, youtube.com):</p>
                 <div class="form-group">
-                    <input type="text" id="blockedSites" placeholder="e.g., example.com, test.com">
-                    <button id="add_website" class="btn-secondary">Add</button>
+                    <div class="input-with-button">
+                        <input type="text" id="blockedSites" placeholder="e.g., example.com, test.com">
+                        <button id="add_website" class="btn-secondary"><i class="fas fa-plus"></i> Add</button>
+                    </div>
                 </div>
+                <p class="helper-text"><i class="fas fa-info-circle"></i> Separate multiple domains with commas.</p>
             </section>
 
             <section id="blockedSitesList" class="card">
-                <h2>Currently Blocked Websites</h2>
+                <h2><i class="fas fa-list"></i> Currently Blocked Websites</h2>
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <i class="fas fa-exclamation-circle fa-2x" style="margin-bottom: 15px; color: var(--text-secondary);"></i>
+                    <p>No websites are currently being blocked.</p>
+                    <p class="helper-text">Add some websites above to start blocking distractions.</p>
+                </div>
                 <ul id="siteList">
                     <!-- The list of blocked sites with remove buttons will be rendered here by options.js -->
                 </ul>
             </section>
         </main>
+
+        <footer>
+            <p><i class="fas fa-shield-alt"></i> Website Blocker © 2023 | <a href="https://github.com/PaulchauvinAI/website-blocker" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+        </footer>
     </div>
 
     <script src="options.js"></script>

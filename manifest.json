@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Website Blocker",
-    "version": "1.1",
-    "description": "Block specific websites during certain timeframes and redirect to another URL.",
+    "version": "2.1",
+    "description": "Block distracting websites during certain timeframes with advanced scheduling and focus mode.",
     "icons": {
         "16": "images/icon16.png",
         "32": "images/icon32.png",
@@ -11,13 +11,21 @@
       },
     "permissions": [
       "storage",
-      "webNavigation"
+      "webNavigation",
+      "alarms",
+      "notifications"
     ],
     "background": {
       "service_worker": "background.js"
     },
     "action": {
-      "default_title": "Open Blocker Settings"
+      "default_title": "Open Blocker Settings",
+      "default_icon": {
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      }
     },
     "options_page": "options.html"
   }
