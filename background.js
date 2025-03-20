@@ -4,7 +4,7 @@ chrome.action.onClicked.addListener((tab) => {
   });
 });
 
-// Keep track of recently blocked sites to avoid multiple notifications
+// Keep track of recently blocked sites to avoid multiple console logs
 const recentlyBlockedSites = new Set();
 
 // Clear the set of recently blocked sites every 5 minutes
@@ -66,17 +66,11 @@ chrome.webNavigation.onBeforeNavigate.addListener(function(details) {
         if (isInBlockedTimeframe) {
           console.log(`Blocking access to ${hostname} and redirecting to ${redirectUrl}`);
           
-          // Show a notification (if this site hasn't been recently blocked)
+          // Log the blocking (if this site hasn't been recently blocked)
           if (!recentlyBlockedSites.has(hostname)) {
             recentlyBlockedSites.add(hostname);
             
-            chrome.notifications.create({
-              type: 'basic',
-              iconUrl: 'images/icon128.png',
-              title: 'Website Blocked',
-              message: `Access to ${hostname} has been blocked during your focus time.`,
-              priority: 2
-            });
+            console.log(`Website Blocked: Access to ${hostname} has been blocked during your focus time.`);
           }
           
           chrome.tabs.update(details.tabId, { url: redirectUrl });
@@ -107,14 +101,8 @@ chrome.runtime.onInstalled.addListener(function(details) {
     chrome.storage.sync.set(defaultSettings, function() {
       console.log("Default settings initialized");
       
-      // Show welcome notification
-      chrome.notifications.create({
-        type: 'basic',
-        iconUrl: 'images/icon128.png',
-        title: 'Website Blocker Installed',
-        message: 'Click the extension icon to configure your website blocking settings.',
-        priority: 2
-      });
+      // Log welcome message instead of showing notification
+      console.log('Website Blocker Installed! Click the extension icon to configure your website blocking settings.');
     });
   }
 });

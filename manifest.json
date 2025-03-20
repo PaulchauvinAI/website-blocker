@@ -12,8 +12,7 @@
     "permissions": [
       "storage",
       "webNavigation",
-      "alarms",
-      "notifications"
+      "alarms"
     ],
     "background": {
       "service_worker": "background.js"
